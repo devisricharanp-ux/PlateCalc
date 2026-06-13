@@ -7,7 +7,7 @@ if __name__ == '__main__':
     gc.collect()
     torch.cuda.empty_cache()
 
-    model = YOLO("yolov8s-seg.pt") 
+    model = YOLO("yolov8s-seg.pt")     #Can also use nano model since there are just 12 categories to remember
     
     results = model.train(
         data="config_macro.yaml", 
