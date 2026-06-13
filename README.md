@@ -8,7 +8,7 @@ Dataset used - https://www.kaggle.com/datasets/ggrill/foodseg103
 
 ## Two-Stage Hierarchical (12-class detector + per-category classifiers)
   
-  Pros:
+###  Pros:
   
   Each stage-2 classifier only needs to distinguish among a small subset (3-20 classes), which is generally easier to train well with limited    data per class
   If some macro-categories have very few images for certain fine-grained classes, the impact is contained to that one classifier rather than     dragging down the whole model
@@ -16,7 +16,7 @@ Dataset used - https://www.kaggle.com/datasets/ggrill/foodseg103
   Can iterate on individual classifiers independently without retraining everything (e.g., if "Fruits" classifier is weak, retrain just that     one)
   Stage-1 detector (12 classes) likely converges faster and more reliably than a 103-class detector, since fewer classes = less confusion in     the detection head
   
-  Cons:
+###  Cons:
   
   Error propagation — if stage 1 misroutes an item to the wrong macro-category, stage 2 has zero chance of correcting it, since that             classifier doesn't even have the correct class as an option
   More moving parts — 13 models total (1 detector + 12 classifiers) means more training runs, more files to manage, more inference latency       (crop → classify, per detected box)
@@ -26,14 +26,14 @@ Dataset used - https://www.kaggle.com/datasets/ggrill/foodseg103
 
 ## Single-Stage (103-class YOLOv8 detector)
   
-  Pros:
+###  Pros:
   
   Simpler pipeline — one model, one inference pass, no crop-and-reclassify step, lower latency
   No error propagation between stages — every class is "in the running" for every detection directly
   Easier to deploy and maintain — one model file, one training run
   The detector learns spatial + class features jointly, which can sometimes pick up on contextual cues (e.g., plate position, co-occurring foods) that a cropped classifier loses
   
-  Cons:
+###  Cons:
   
   103-class detection head is harder to train well, especially with limited data per class — visually similar items (different fruits, different leafy greens) are more likely to be confused
   Class imbalance across 103 categories is harder to manage in one model — common classes can dominate and starve rare ones
