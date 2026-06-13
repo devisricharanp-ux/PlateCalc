@@ -7,6 +7,7 @@ Dataset used - https://www.kaggle.com/datasets/ggrill/foodseg103
    I have used two methods to train the model
 
 Two-Stage Hierarchical (12-class detector + per-category classifiers)
+  
   Pros:
   
   Each stage-2 classifier only needs to distinguish among a small subset (3-20 classes), which is generally easier to train well with limited    data per class
