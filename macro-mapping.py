@@ -1,3 +1,5 @@
+import os
+import shutil
 # Create an indexed list matching your FoodSeg103 labels to get the original ID indices
 original_classes = [
     "background", "candy", "egg tart", "french fries", "chocolate", "biscuit", "popcorn", "pudding", "ice cream", "cheese butter",
@@ -12,10 +14,6 @@ original_classes = [
     "snow peas", "cabbage", "bean sprouts", "onion", "pepper", "green beans", "French beans", "king oyster mushroom", "shiitake", "enoki mushroom",
     "oyster mushroom", "white button mushroom", "salad", "other ingredients"
 ]
-
-import os
-import shutil
-
 # --- Step 1: Define your macro category map (0-11), background excluded ---
 MACRO_MAP = {
     # Category 0: Grains & Starchy Mains
@@ -138,8 +136,8 @@ def remap_yolo_labels(src_folder, dst_folder, id_conversion):
 
 
 # --- Step 3: Run on a COPY of the labels, never the original ---
-ORIGINAL_LABELS = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val"  # <-- set your original labels directory here
-REMAPPED_LABELS = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val_remapped"  # <-- set your remapped labels directory here
+ORIGINAL_LABELS =# <-- set your original labels directory here
+REMAPPED_LABELS = # <-- set your remapped labels directory here
 
 # Optional: keep an untouched backup of the originals too
 # shutil.copytree(ORIGINAL_LABELS, "path/to/backup/labels_original", dirs_exist_ok=True)
