@@ -1,7 +1,7 @@
 # PlateCalc🍽️ 
 This Repository has all the resources to build a Computer vision based model( using YOLOv8) to predict the calories present in a plate
 
-Dataset used - foodseg103[https://www.kaggle.com/datasets/ggrill/foodseg103]
+Dataset used - [foodseg103](https://www.kaggle.com/datasets/ggrill/foodseg103)
 ##1. Dataset Preparation & Model Training
    Use the FoodSeg103 dataset containing food images, segmentation masks, and labels.
    I have used two methods to train the model
