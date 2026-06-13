@@ -6,7 +6,7 @@ Dataset used - https://www.kaggle.com/datasets/ggrill/foodseg103
    Use the FoodSeg103 dataset containing food images, segmentation masks, and labels.
    I have used two methods to train the model
 
-Two-Stage Hierarchical (12-class detector + per-category classifiers)
+##Two-Stage Hierarchical (12-class detector + per-category classifiers)
   
   Pros:
   
@@ -24,7 +24,7 @@ Two-Stage Hierarchical (12-class detector + per-category classifiers)
   Imbalanced classifiers — category 7 (20 classes) and category 11 (4 classes, very heterogeneous) will likely perform very differently,         making overall system accuracy uneven
   Slightly more complex deployment/maintenance pipeline
 
-Single-Stage (103-class YOLOv8 detector)
+##Single-Stage (103-class YOLOv8 detector)
   
   Pros:
   
