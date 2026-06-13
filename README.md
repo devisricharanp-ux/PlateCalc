@@ -24,6 +24,7 @@ Two-Stage Hierarchical (12-class detector + per-category classifiers)
   Slightly more complex deployment/maintenance pipeline
 
 Single-Stage (103-class YOLOv8 detector)
+  
   Pros:
   
   Simpler pipeline — one model, one inference pass, no crop-and-reclassify step, lower latency
