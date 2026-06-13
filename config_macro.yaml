@@ -1,6 +1,6 @@
- path: C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\Data
- train: images\train
- val: images\val
+ path: #Path to your Data folder
+ train: #Path to images(train)
+ val: #Path to images(val)
 
 # Define the new structural constraints
  nc: 12
