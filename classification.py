@@ -2,12 +2,13 @@ import os
 from PIL import Image
 
 # ====== CONFIGURATION ======
-IMAGES_DIR = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\Data\images\val"  # <-- set your images directory here
-LABELS_DIR = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val"
-OUTPUT_DIR = r"C:\Users\devis\OneDrive\Desktop\FoodCal\macro-mappings\11—Condiments & Mixed-Aromatics\val "  # <-- set your output directory here
+IMAGES_DIR =   # <-- set your images directory here
+LABELS_DIR =   # <-- set your labels directory here
+OUTPUT_DIR =  # <-- set your output directory here
 
 TARGET_CATEGORIES = [51, 78, 88, 102]  # <-- set your category IDs here
 
+#example -->
 CATEGORY_NAMES = {
     51: "sauce",
     78: "okra",
