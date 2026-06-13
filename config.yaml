@@ -1,6 +1,6 @@
- path: C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\Data
- train: images\train
- val: images\val
+ path: #add path to your Data folder 
+ train: #Path to your images(train)
+ val: #Path to your images(val)
  nc: 103
  names:
    0: candy
