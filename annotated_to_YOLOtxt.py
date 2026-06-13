@@ -72,11 +72,11 @@ def convert_foodseg_to_yolo(ann_dir, output_txt_dir):
 if __name__ == "__main__":
     # ------------------ CONFIGURATION ------------------
     # Update these paths to match your local dataset folders
-    TRAIN_ANN_DIR = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\train"
-    VAL_ANN_DIR   = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\val"
+    TRAIN_ANN_DIR = 
+    VAL_ANN_DIR   = 
     
-    TRAIN_OUT_DIR = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\train"
-    VAL_OUT_DIR   = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val"
+    TRAIN_OUT_DIR = 
+    VAL_OUT_DIR   = 
     # ---------------------------------------------------
 
     print("--- Converting Training Dataset Masks ---")
