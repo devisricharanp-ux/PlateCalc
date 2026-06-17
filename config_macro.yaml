@@ -1,0 +1,21 @@
+ path: #Path to your Data folder
+ train: #Path to images(train)
+ val: #Path to images(val)
+
+# Define the new structural constraints
+ nc: 12
+ names:
+   0: Grains & Starchy Mains
+   1: Lean Proteins & Seafood
+   2: Fatty_Meats
+   3: Fried & Crispy Snacks
+   4: Leafy & Low-Calorie Veg
+   5: Root & Allium Veg
+   6: Fungi
+   7: Fruits
+   8: Nuts, Seeds & Legumes
+   9: Sweets & Desserts
+   10: Beverages & Dairy
+   11: Condiments & Mixed/Aromatics
+
+   
