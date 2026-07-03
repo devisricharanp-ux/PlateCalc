@@ -81,4 +81,35 @@ Dataset used - [foodseg103](https://www.kaggle.com/datasets/ggrill/foodseg103)
 - **Confirms the hierarchical hypothesis** — reducing class count from 103 → 12 meaningfully eases the detection task, supporting the two-stage pipeline approach over a single flat 103-class detector
 - **Next step**: stage 2 classifier accuracy (per macro-category) will determine whether these stage-1 gains translate into better final fine-grained results — overall system accuracy = stage-1 mAP × stage-2 classifier accuracy (roughly), so both stages need to be evaluated together for the final comparison
 
+## Real-World Testing & Findings — The Metrics Lied
+
+After training both pipelines, the hierarchical model dominated every single
+validation metric. The conclusion seemed obvious. It wasn't.
+
+Real-world testing told a completely different story.
+
+This pattern repeated across every test image. The model with better metrics
+lost. The model with worse metrics won. Every time.
+
+The instinct was to fix Stage 1 — larger backbone, more epochs, stronger
+augmentation. But the real problem runs deeper than that. Stage 1 is being
+asked to visually separate rice from potato and grilled chicken from steak
+on a plate. They look identical. No model size fixes that.
+
+Worse, the contradiction is structural. Groupings that are visually separable
+(pale foods together, browned meats together) are nutritionally meaningless —
+rice, potato, and noodles in one category spans 77 to 138 kcal/100g. Groupings
+that are nutritionally meaningful (Grains vs Root Veg) are visually ambiguous.
+For calorie estimation you need both. The hierarchical approach cannot provide both.
+
+The flat 103-class model sidesteps this entirely — it never makes an intermediate
+grouping decision and directly asks "is this rice or potato?", which is the right
+question. Its joint training across all 103 classes also forced it to learn more
+robust, fine-grained visual features that generalised better to real-world images,
+while Stage 1 had quietly overfit to the visual style of FoodSeg103 specifically.
+
+The flat 103-class segmentation model was selected for the final calorie estimation
+pipeline. The hierarchical approach, despite its promising metrics, revealed a more
+valuable lesson: **the right problem formulation matters more than model sophistication,
+and benchmark metrics are necessary but not sufficient for real-world performance.**
   
