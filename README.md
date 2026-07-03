@@ -48,23 +48,23 @@ Dataset used - [foodseg103](https://www.kaggle.com/datasets/ggrill/foodseg103)
 
 ---
 
-### Experimental Results
+## Experimental Results
 
-## Single Model — 103 Classes (YOLOv8s)
+### Single Model — 103 Classes (YOLOv8s)
 
 | Metric | precision(B) | recall(B) | mAP50(B) | mAP50-95(B) | precision(M) | recall(M) | mAP50(M) | mAP50-95(M) |
 |---|---|---|---|---|---|---|---|---|
 | Average | 43.68 | 31.29 | 28.89 | 23.45 | 44.19 | 31.34 | 29.11 | 22.43 |
 | Maximum | 48.26 | 34.65 | 31.23 | 25.51 | 48.55 | 34.90 | 31.48 | 24.30 |
 
-## Single Model — 103 Classes (YOLOv8n)
+### Single Model — 103 Classes (YOLOv8n)
 
 | Metric | precision(B) | recall(B) | mAP50(B) | mAP50-95(B) | precision(M) | recall(M) | mAP50(M) | mAP50-95(M) |
 |---|---|---|---|---|---|---|---|---|
 | Average | 45.28 | 24.90 | 22.40 | 17.87 | 45.87 | 24.73 | 22.40 | 17.17 |
 | Maximum | 50.53 | 29.98 | 26.43 | 21.18 | 50.41 | 30.02 | 26.44 | 20.33 |
 
-## Stage 1 — Macro Categories (12 Classes, YOLOv8s)
+### Stage 1 — Macro Categories (12 Classes, YOLOv8s)
 
 | Metric | precision(B) | recall(B) | mAP50(B) | mAP50-95(B) | precision(M) | recall(M) | mAP50(M) | mAP50-95(M) |
 |---|---|---|---|---|---|---|---|---|
