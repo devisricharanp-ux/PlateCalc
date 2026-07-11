@@ -1,4 +1,4 @@
- path: C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\Data
+ path: #Add path to data
  train: images\train
  val: images\val
 
