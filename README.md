@@ -138,6 +138,8 @@ Total Calories
 
 ---
 
+validation code ---> [validate_platecalc](https://github.com/devisricharanp-ux/PlateCalc/blob/main/predict_small.py)
+
 ### Weight Estimation
 
 **Countable items** — fixed average weight × instance count
