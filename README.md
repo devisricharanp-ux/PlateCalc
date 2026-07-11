@@ -112,4 +112,74 @@ The flat 103-class segmentation model was selected for the final calorie estimat
 pipeline. The hierarchical approach, despite its promising metrics, revealed a more
 valuable lesson: **the right problem formulation matters more than model sophistication,
 and benchmark metrics are necessary but not sufficient for real-world performance.**
+
+## 3. Inference Pipeline & Calorie Estimation
+
+### How It Works
+
+```
+Input Image
+    ↓
+YOLOv8s Segmentation → mask + class name per food item
+    ↓
+Duplicate Mask Removal (IoU > 0.5)
+    ↓
+Connected Component Analysis → instance count per item
+    ↓
+Weight Estimation → fixed weight (countable) or pixel area (area-based)
+    ↓
+USDA API → kcal/100g per food class
+    ↓
+Total Calories
+```
+
+---
+
+### Weight Estimation
+
+**Countable items** — fixed average weight × instance count
+```
+egg = 50g, banana = 118g, shrimp = 10g ...
+```
+
+**Area-based items** — mask pixel count × weight per pixel
+```
+All FoodSeg103 images are shot from a consistent overhead 
+distance (~50–70cm) at 512×403 resolution, so one pixel 
+represents the same real-world area across every image.
+
+WEIGHT_PER_PIXEL = 400g / (512 × 403 × 0.70) ≈ 0.00277 g/pixel
+```
+
+---
+
+### Calorie Lookup
+
+Calories fetched from [USDA FoodData Central API](https://fdc.nal.usda.gov/)
+using `SR Legacy` data type. Results cached per class — API called only once
+per unique food item detected.
+
+---
+
+### Sample Output
+
+```
+====== Detection Results ======
+  chicken duck    | conf: 0.92 | weight: 198.4g | calories: 474.7 kcal
+  rice            | conf: 0.96 | weight: 143.2g | calories: 186.2 kcal
+  green beans     | conf: 0.99 | weight:  82.1g | calories:  26.3 kcal
+
+  TOTAL CALORIES: 687.2 kcal
+================================
+```
+
+---
+
+### Limitations
+- Weight estimation assumes consistent overhead shooting distance and standard plate size (~26cm)
+- 2D mask area cannot capture food depth — a heaped vs flat portion of rice look identical
+- Some common foods (e.g. plain peas) are absent from FoodSeg103 and will not be detected
+
+---
+
   
