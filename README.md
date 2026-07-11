@@ -3,9 +3,9 @@ This Repository has all the resources to build a Computer vision based model( us
 
 Dataset used - [foodseg103](https://www.kaggle.com/datasets/ggrill/foodseg103)
 ## 1.Image Preprocessing
-   Use the annotated images from the Dataset to generate labels in YOLOtxt format.
+   Used the annotated images from the Dataset to generate labels in YOLOtxt format.
    
-   Use this boilerplate code [annotated to YOLO](https://github.com/devisricharanp-ux/PlateCalc/blob/code/annotated_to_YOLOtxt.py)
+   code ---> [annotated to YOLO](https://github.com/devisricharanp-ux/PlateCalc/blob/code/annotated_to_YOLOtxt.py)
 ## 2. Dataset Preparation & Model Training
    Use the FoodSeg103 dataset containing food images, segmentation masks, and labels.
    
