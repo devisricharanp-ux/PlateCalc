@@ -10,6 +10,9 @@ Dataset used - [foodseg103](https://www.kaggle.com/datasets/ggrill/foodseg103)
    Use the FoodSeg103 dataset containing food images, segmentation masks, and labels.
    
    I have used two methods to train the model
+   code for single-stage pipeline ---> [train_single_stage_segmentation](https://github.com/devisricharanp-ux/PlateCalc/blob/main/train.py)
+   code for two-staged pipeline   ---> [train_two_stage_macro_classifier](https://github.com/devisricharanp-ux/PlateCalc/blob/main/train_classifier.py)
+                                       [train_two_stage_macro_segmentation](https://github.com/devisricharanp-ux/PlateCalc/blob/main/train_macromapping.py)
 
 ## Approach Comparison: Single-Stage vs Two-Stage Hierarchical
 
