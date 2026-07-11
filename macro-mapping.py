@@ -138,8 +138,8 @@ def remap_yolo_labels(src_folder, dst_folder, id_conversion):
 
 
 # --- Step 3: Run on a COPY of the labels, never the original ---
-ORIGINAL_LABELS = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val"  # <-- set your original labels directory here
-REMAPPED_LABELS = r"C:\Users\devis\OneDrive\Desktop\FoodCal\FoodSeg103\ann_dir\labels\val_remapped"  # <-- set your remapped labels directory here
+ORIGINAL_LABELS =   # <-- set your original labels directory here
+REMAPPED_LABELS =   # <-- set your remapped labels directory here
 
 # Optional: keep an untouched backup of the originals too
 # shutil.copytree(ORIGINAL_LABELS, "path/to/backup/labels_original", dirs_exist_ok=True)
